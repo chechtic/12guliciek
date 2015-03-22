@@ -10,19 +10,18 @@ vaha.os(193,3,mp);
 vaha.ramenneOsi(11,122,592,122);
 vaha.nastavTelo();
 var i=0;
+var j=360
+var smer=true;
 vaha.nastavRameno(i);
-(function rm(){
-	setTimeout(function(){if(i++<=360){
+(function rm(smer){
+	setTimeout(function(plus){if(i++<=360){
+		plus=plus || true;
 			//if(i==15 || i==345){vaha.nastavRameno(i);}
-			vaha.nastavRameno(i);
-			rm();
+			if(smer){j=i;}else{j--;}
+			vaha.nastavRameno(j);
+			rm(smer);
 		}
 	},10);
-})();
-
-
-
-
-
+})(smer);
 
 
