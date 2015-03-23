@@ -25,7 +25,7 @@ GULICKY.prototype.presunGulicky=function(zPola,doPola,pocet,zachovajVZdrojovomPo
 		}
 	}	
 }
-GULICKY.prototype.vratZnamu=function(polia){
+GULICKY.prototype.vratZnamu=function(){
 	for(i in arguments){
 		for(ii in this.znama){
 			var x=arguments[i].indexOf(this.znama[ii]);
@@ -35,7 +35,7 @@ GULICKY.prototype.vratZnamu=function(polia){
 		}
 	}
 }
-GULICKY.prototype.zmenuVahyPresunDoZnamych=function(dvepolia){
+GULICKY.prototype.zmenuVahyPresunDoZnamych=function(){
 	for(i in arguments[0]){
 		var x=arguments[1].indexOf(arguments[0][i]);
 		if(x!=-1){
