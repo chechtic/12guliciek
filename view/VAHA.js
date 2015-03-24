@@ -11,12 +11,13 @@ VAHA.prototype.nastavTelo=function(left,top){
 }
 VAHA.prototype.animujVahu=function(deg,x,lx,px,y){
 	deg=deg || 0;
+	deg=this.absDeg(deg);
 	this.rameno.style.WebkitTransform='rotate('+deg+'deg)'; 
     this.rameno.style.msTransform='rotate('+deg+'deg)'; 
     this.rameno.style.transform='rotate('+deg+'deg)';
     this.rameno.style.zIndex='1';
-    this.setXY(this.miskaLava,lx,y,this.xyNaKruznici(deg,x),'0');
-    this.setXY(this.miskaPrava,px,y,this.xyNaKruznici(deg+180,x),'0');
+    this.setXY(this.miskaLava,lx,y,this.xyNaKruznici(deg-20.5,x),'0');
+    this.setXY(this.miskaPrava,px,y,this.xyNaKruznici(deg+200.5,x),'0');
 }
 VAHA.prototype.setXY=function(objekt,x,y,xy,i){
 	x=x||0;
