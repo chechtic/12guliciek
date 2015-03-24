@@ -6,14 +6,28 @@
 		<link rel="stylesheet" type="text/css" href="css/gulicky.css">
 	</head>
 	<body>
-		<h1>Testiky</h1>
-		<div class="vaha">
-			<img id="telo" src="pic/telo.png" alt="telo"></img>
-			<img id="miskal" src="pic/miska.png" alt="miska"></img>
-			<img id="miskap" src="pic/miska.png" alt="miska"></img>
-			<img id="rameno" src="pic/rameno.png" alt="rameno"></img>
-		</div>	
-		<img src="pic/gulicka.png" alt="gulicka">
+		<h1>Kolo 1</h1>
+		<img class="v" id="telo" src="pic/telo.png" alt="telo"></img>
+		<img class="v" id="miskal" src="pic/miska.png" alt="miska"></img>
+		<img class="v" id="miskap" src="pic/miska.png" alt="miska"></img>
+		<img class="v" id="rameno" src="pic/rameno.png" alt="rameno"></img>
+		<div class="v" id="divl" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="v" id="divp" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="g" id="n" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<p>Nezname</p>
+			<img class="g" id="1" src="pic/gulicka.png" alt="gulicka" draggable="true" ondragstart="drag(event)">
+			<img class="g" id="2" src="pic/gulicka.png" alt="gulicka" draggable="true" ondragstart="drag(event)">
+		</div>
+		<div class="g" id="l" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<p>Lahsie</p>
+		</div>
+		<div class="g" id="t" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<p>Tazsie</p>
+		</div>
+		<div class="g" id="z" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<p>Zname</p>
+		</div>
+		<button onclick="vaz()">Odvaz</button>
 		<script src="view/VAHA.js"></script>
 		<script src="view/zobraz.js"></script>
 		<script src="data/GULICKY.js"></script>

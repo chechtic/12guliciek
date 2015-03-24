@@ -1,8 +1,10 @@
-var VAHA=function(telo,rameno,miskal,miskap){
+var VAHA=function(telo,rameno,miskal,miskap,divL,divP){
 	this.telo=telo;
 	this.rameno=rameno;
 	this.miskaLava=miskal;
 	this.miskaPrava=miskap;
+	this.divL=divL;
+	this.divP=divP;
 }
 VAHA.prototype.nastavTelo=function(left,top){
 	left=left || Math.round(window.innerWidth/2-this.telo.width/2);
@@ -17,7 +19,9 @@ VAHA.prototype.animujVahu=function(deg,x,lx,px,y){
     this.rameno.style.transform='rotate('+deg+'deg)';
     this.rameno.style.zIndex='1';
     this.setXY(this.miskaLava,lx,y,this.xyNaKruznici(deg-20.5,x),'0');
+    this.setXY(this.divL,parseInt(this.miskaLava.style.left),parseInt(this.miskaLava.style.top)+this.miskaLava.height-this.divL.height,'','1');
     this.setXY(this.miskaPrava,px,y,this.xyNaKruznici(deg+200.5,x),'0');
+    this.setXY(this.divP,parseInt(this.miskaPrava.style.left),parseInt(this.miskaPrava.style.top)+this.miskaPrava.height-this.divP.height,'','1');
 }
 VAHA.prototype.setXY=function(objekt,x,y,xy,i){
 	x=x||0;

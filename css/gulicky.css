@@ -1,3 +1,12 @@
-img{
+.v{
 	position:absolute;
+}
+div.v{
+	width:280px;
+	height:48px;
+}
+div.g{
+	width:280px;
+	height:150px;
+	border:1px solid black;
 }
