@@ -1,12 +1,11 @@
-.v{
+.v,.d{
 	position:absolute;
 }
-div.v{
+div.d{
 	width:280px;
 	height:48px;
-}
-div.g{
-	width:280px;
-	height:150px;
 	border:1px solid black;
 }
+
+
+

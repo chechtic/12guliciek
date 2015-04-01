@@ -44,36 +44,47 @@ GULICKY.prototype.zmenuVahyPresunDoZnamych=function(){
 		}
 	}
 }
-GULICKY.prototype.vazenie=function(lavaMiska,pravaMiska,rozdielnaGulicka,vahaRozdielnej){
+GULICKY.prototype.vazenie=function(lavaMiska,pravaMiska,rozdielnaGulicka,vahaRozdielnej,premiestnuj){
 	var l=this.jeGulickaTu(lavaMiska,rozdielnaGulicka);
 	var p=this.jeGulickaTu(pravaMiska,rozdielnaGulicka);
 	var ll=lavaMiska.length;
 	var pp=pravaMiska.length;
+	premiestnuj=premiestnuj || false;
 	if (l || ll>pp){
 		if(vahaRozdielnej==0){
-			this.presunGulicky(lavaMiska,this.neznama.lahsia);
-			this.presunGulicky(pravaMiska,this.neznama.tazsia);
+			if(premiestnuj){
+				this.presunGulicky(lavaMiska,this.neznama.lahsia);
+				this.presunGulicky(pravaMiska,this.neznama.tazsia);
+			}
 			return '<';
 		}else{
-			this.presunGulicky(lavaMiska,this.neznama.tazsia);
-			this.presunGulicky(pravaMiska,this.neznama.lahsia);
+			if(premiestnuj){
+				this.presunGulicky(lavaMiska,this.neznama.tazsia);
+				this.presunGulicky(pravaMiska,this.neznama.lahsia);
+			}
 			return '>';
 		}
 	}
 	else if (p || pp>ll){
 		if(vahaRozdielnej==0){
-			this.presunGulicky(pravaMiska,this.neznama.lahsia);
-			this.presunGulicky(lavaMiska,this.neznama.tazsia);
+			if(premiestnuj){
+				this.presunGulicky(pravaMiska,this.neznama.lahsia);
+				this.presunGulicky(lavaMiska,this.neznama.tazsia);
+			}
 			return '>';
 		}else{
-			this.presunGulicky(pravaMiska,this.neznama.tazsia);
-			this.presunGulicky(lavaMiska,this.neznama.lahsia);
+			if(premiestnuj){
+				this.presunGulicky(pravaMiska,this.neznama.tazsia);
+				this.presunGulicky(lavaMiska,this.neznama.lahsia);
+			}
 			return '<';
 		}
 	}
 	else if (p==false && l==false && ll==pp){
-		this.presunGulicky(pravaMiska,this.znama);
-		this.presunGulicky(lavaMiska,this.znama);
+		if(premiestnuj){
+			this.presunGulicky(pravaMiska,this.znama);
+			this.presunGulicky(lavaMiska,this.znama);
+		}
 		return '=';
 	}
 }

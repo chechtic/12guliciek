@@ -16,7 +16,7 @@ var y=i+108; //y os tela
 var lOsX=x-138; //stred tela x- usko misky
 var pOsX=x-138-2; //stred tela x- usko misky - kompenzacia
 var rameno=312; //rameno od osi k miske
-vaha.animujVahu(0,rameno,lOsX,pOsX,y);
+vaha.animujRameno(0,rameno,lOsX,pOsX,y);
 
 r.style.left=Number(x-r.width/2)+'px';
 r.style.top=Number(y-r.height/2)+'px';
@@ -31,7 +31,7 @@ function vaz(){
 		setTimeout(function(smer){if(i<=360){
 				smer=smer || true;
 				if(vshr){j=i;}
-				vaha.animujVahu(j,rameno,lOsX,pOsX,y);
+				vaha.animujRameno(j,rameno,lOsX,pOsX,y);
 				i+=step;
 				j-=step;
 				rm(smer);
@@ -40,17 +40,22 @@ function vaz(){
 	})(vshr);
 }
 
-function allowDrop(ev) {
-    ev.preventDefault();
+function zobrazgulicky(pole,tag,id){
+	var el=document.body.getElementsByTagName(tag);
+	for(var i=0;i<pole.length;i++){
+		var div = document.createElement('div');
+		div.setAttribute('class','gl');
+		div.setAttribute('id',pole[i]);
+		div.setAttribute('draggable','true');
+		div.setAttribute('ondragstart','drag(event)');
+		div.innerHTML='<img class="gl" src="pic/gulicka.png" alt="gulicka" ><p class="gl">'+pole[i]+'</p></img>'
+		if(id==undefined){
+			if(tag==undefined){
+				document.body.appendChild(div)
+			}else{document.body.insertBefore(div,el[0]);}
+		}else{document.getElentById(id).appendChild(div);}
+	}
 }
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
 
